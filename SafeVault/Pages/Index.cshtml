@@ -1,0 +1,25 @@
+﻿@page
+@using System.Diagnostics.Eventing.Reader
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    @if (string.IsNullOrEmpty(User.Identity?.Name))
+    {
+        <h1 class="display-4">Welcome!</h1>
+        <h2>Please log in to access your SafeVault.</h2>
+        <p><a href="/LoginUser">Login</a> | <a href="/RegisterUser">Register</a></p>        
+    }
+    else
+    {
+        <h1 class="display-4">Welcome, @User.Identity?.Name!</h1>
+        @if (User.IsInRole("Admin"))
+        {
+            <p>You are registered as administrator!</p>
+        }  
+        <p><a>Now you can try visiting </a><a href="/AdminOnlyPage">the page for administrators only</a><a>. Good luck!</a></p>
+    }    
+    
+</div>

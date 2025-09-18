@@ -1,0 +1,35 @@
+﻿@page
+@model RegisterUserModel
+@{
+    ViewData["Title"] = "Register new user";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+
+    @if (!string.IsNullOrEmpty(Model.Message))
+    {
+        <label>@Model.Message</label>
+    }
+    </br />    
+
+    <label for="Username">Username:</label>
+    <input asp-for="Username" type="text" placeholder="Username" required />
+    </br />
+    
+    <label for="Email">Email:</label>
+    <input asp-for="Email" type="email" placeholder="Email" required />
+    </br />
+    
+    <label for="Password">Password:</label>
+    <input asp-for="Password" type="password" placeholder="Password" required />
+
+    <label for="ConfirmPassword">Repeat Password:</label>
+    <input asp-for="ConfirmPassword" type="password" placeholder="Repeat Password" required />
+
+    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+
+    </br />
+    
+    <button type="submit">Register</button>
+</form>

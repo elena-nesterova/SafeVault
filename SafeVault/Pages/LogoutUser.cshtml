@@ -1,0 +1,15 @@
+@page
+@model LogoutUserModel
+@{
+    ViewData["Title"] = "Logout user";
+}
+<h1>@ViewData["Title"]</h1>
+
+@if (!string.IsNullOrEmpty(User.Identity?.Name))
+{
+    <form method="post" asp-page-handler="OnLogout">            
+        <h2>You are already logged in as @User.Identity?.Name!</h2>
+        <h3>If you want to log in as a different user, please log out first.</h3>
+        <button type="submit">Logout</button>
+    </form>
+}

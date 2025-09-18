@@ -1,0 +1,24 @@
+@page
+@model AdminOnlyPageModel
+@{
+    ViewData["Title"] = "There is a secret admin stuff here!";
+}
+<h1>@ViewData["Title"]</h1>
+
+<h2>List of registered users:</h2>
+
+@if (@Model.Users == null || !@Model.Users.Any())
+{
+    <p>No users found.</p>
+}
+else
+{
+    <ul>
+        @foreach (var user in @Model.Users)
+        {            
+            <li>
+                <label>@user</label>                
+            </li>            
+        }
+    </ul>
+}

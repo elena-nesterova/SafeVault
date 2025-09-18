@@ -1,0 +1,56 @@
+## Build artifacts
+bin/
+obj/
+out/
+Debug/
+Release/
+x64/
+x86/
+
+## User-specific files
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+## IDE
+.vscode/
+.idea/
+*.sw?
+*.orig
+
+## Visual Studio
+*.ncb
+*.opendb
+*.opensdf
+*.sdf
+*.cachefile
+
+## ASP.NET Core
+appsettings.Development.json
+appsettings.*.local.json
+
+## EF Core Migrations (keep C# files, ignore model snapshot backups)
+*.db-shm
+*.db-wal
+
+## SQLite database (ignore if generated locally, but remove if you want to version-control it)
+AppData/*.db
+
+## Secrets
+secrets.json
+*.pfx
+*.key
+
+## Logs
+*.log
+logs/
+
+## Publish output
+publish/
+dist/
+
+## Other
+*.DS_Store
+Thumbs.db
